@@ -1,0 +1,97 @@
+/* pages/orderDetail/orderDetail.wxss */
+.page>view{
+  background: #fff;
+  margin-bottom: 10px;
+  padding: 15px;
+  position: relative;
+}
+.top text{
+  display: block;
+  color: #7C7E7E;
+  font-size: 26rpx;
+}
+.top .title{
+  display:block;
+  margin-bottom: 10px;
+}
+.top .title text{
+  display: inline-block;
+  color: #3C3C3C;
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.top .title .type{
+  display: inline;
+  color: #7C7E7E;
+  font-size: 24rpx;
+}
+.top .status{
+  color: #F95C36;
+  font-size: 24rpx;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+.xfm{
+  padding-top: 15px;
+  margin-top: 15px;
+  border-top: 1px solid #E8E8E8;
+  position: relative;
+  min-height: 200rpx;
+}
+.xfm image{
+  width: 193rpx;
+  height: 193rpx;
+  position: absolute;
+  top: 15px;
+  right: 0px;
+}
+.bottom text{
+  font-size: 28rpx;
+  margin-top: 10px;
+}
+.top .title_1{
+  font-size:34rpx;color:#000;
+  margin-bottom: 15px;
+}
+.bottom navigator{
+   width:110rpx; 
+   height:52rpx; 
+  color: #3C3C3C;
+  font-size: 24rpx;
+  border: 1px solid #979797;
+  padding: 0;
+  background: none;
+  line-height: 52rpx;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.map text{
+  position: absolute;
+  width: 1px;
+  height: 20px;
+  background: #B9B9B9;
+  left: -15px;
+  bottom: 8px;
+}
+.map image{
+  height: 54rpx;
+  width: 54rpx;
+}
+canvas{
+    position: fixed;  
+    left: 100%;  
+  width: 200px;
+  height: 200px;
+}
+.map{
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  position: relative;
+  top: 3px;
+}

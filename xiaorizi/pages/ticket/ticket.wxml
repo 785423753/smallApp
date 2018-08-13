@@ -1,0 +1,16 @@
+<view class='content'>
+    <navigator wx:for="{{list}}" url='../event/event?id={{item.id}}' class='ticket'>
+        <image class='bg' src='../images/ticket_bg@2x.png'></image>
+         <view class='nr'>
+            <image mode='widthFix' src='{{item.img}}'></image>
+            <view class='tkt'><text class='name'>{{item.title}}</text></view>
+            <view class='time'>{{item.date.time_list[0].start_time}} ~ {{item.date.time_list[0].end_time}}
+            <text class='price'><text>￥</text>{{item.minprice}}</text>
+            </view>
+        </view>   
+    </navigator>
+</view>
+
+
+
+

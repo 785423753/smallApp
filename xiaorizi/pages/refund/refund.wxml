@@ -1,0 +1,26 @@
+<view class='content' wx:if="{{data.tickets.length > 0}}">
+    <text class='title'>消费码</text>
+    <view class='list' wx:for="{{data.tickets}}">
+        <text>{{item.captcha}}<block wx:if="{{item.ticket_status==0}}" >（待消费）</block><block wx:if="{{item.ticket_status==1}}" >（已消费）</block><block  wx:if="{{item.ticket_status==2}}" >（退款中）</block><block  wx:if="{{item.ticket_status==3}}" >（已退款）</block>
+        </text>
+        <view class='radio' bindtap='add' data-index="{{index}}" wx:if="{{item.ticket_status == 0}}">
+            <image data-index="{{index}}" wx:if="{{index_0[index] === index}}"  src='../images/my_check_2@2x.png'></image>
+            <image data-index="{{index}}" wx:else src='../images/my_check_1@2x.png'></image>
+        </view>
+    </view>
+
+    <text class='title'>退款金额 <text>￥{{data.tickets[0].price * ticket_ids.length}}</text></text>
+    <view>7个工作日内将退款到原支付账户</view>
+    <text class='title' style='margin-bottom:20px;'>退款原因</text>
+    <view class='list intro' wx:for="{{reason}}">
+      <text>{{item}}</text>
+        <view class='radio' bindtap='choose' data-index="{{index}}">         
+            <image data-index="{{index}}" wx:if="{{index_1 === index}}"  src='../images/my_check_2@2x.png'></image>
+            <image data-index="{{index}}" wx:else src='../images/my_check_1@2x.png'></image>
+        </view>
+    </view>
+</view>
+
+<view style='padding:0 15px;' wx:if="{{data.tickets.length > 0}}">
+  <button bindtap='refund' class='post'>申请退款</button>
+</view>

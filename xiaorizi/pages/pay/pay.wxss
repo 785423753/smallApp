@@ -1,0 +1,138 @@
+/* pages/order/order.wxss */
+.order_info{
+  background: #fff;
+  margin-bottom: 10px;
+  padding: 15px;
+}
+.order_info>view{
+  display: inline-block;
+  vertical-align: top;
+}
+.img{
+    width: 30%;
+}
+.img image{
+  width: 100%;
+  display: block;
+  max-height: 130px;
+}
+.price_info{
+ color: #F95C36;
+ padding-left: 15px;
+ width: 70%;
+}
+.title{
+  color: #3C3C3C;
+  font-size: 30rpx;
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: block;
+}
+.type{
+  font-size: 12px;
+  font-weight: 600;
+}
+.price{
+  font-size: 40rpx;
+  font-weight: 600;
+}
+.tag{
+  position: relative;
+  font-size: 12px;
+  text-align: center;
+  left: 5px;
+  top: -2px;
+  color: #999;
+}
+.tag image{
+   position: absolute; 
+  width: 100%;
+  height: 100%;
+   top: 0;
+  left: 0; 
+}
+.tag text{
+  position: relative;
+  z-index: 99;
+  top: -1px;
+}
+
+.order{
+  background: #fff;
+  margin-bottom: 50px;
+  padding: 0 15px;
+}
+.order>view{
+  position: relative;
+  border-top: 1px solid #E8E8E8;
+  padding: 15px 0;
+}
+.order view:first-child{
+  border: none;
+}
+.order .label{
+  color: #7C7E7E;
+  font-size: 30rpx;
+}
+.jiage{
+  float: right;
+  color: #F95C36;
+  font-size: 40rpx;
+  font-weight: 600;
+}
+.jiage text{
+  font-size: 26rpx;
+  color: #F95C36;
+}
+.tel{
+  position: absolute;
+  width: 60%;
+   border: none; 
+  color: #3C3C3C;
+  font-size: 30rpx;
+  right: 0;
+  top: 15px;
+  text-align: right;
+  /* border: 1px solid red; */
+}
+.post{
+  width: 100%;
+  line-height: 50px;
+  color: #FFF;
+  font-size: 34rpx;
+  background: #F95C36;
+  text-align: center;
+  border: none;
+  outline: none;
+}
+.change{
+  position: absolute;
+  right: 0;
+  top: 15px;
+}
+.change text{
+    display: inline-block;
+    border: 1px solid #D6D6D6;
+    width: 40px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    color: #3C3C3C;
+    font-size: 30rpx;
+    vertical-align: top;
+    margin: 0 10px;
+}
+.change view{
+  width: 22px;
+  height: 22px;
+  position: relative;
+  display: inline-block;
+}
+.change image{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+

@@ -1,0 +1,230 @@
+.city_fiflter,.cat_filter{
+  display: inline-flex;
+  width: 100%;
+  justify-content: center;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  height: 40px;
+}
+.city_fiflter{
+  background: #000;
+}
+.city_fiflter navigator{
+  font-size: 16px;
+  color: #FFF;
+  display: block;
+  padding: 12px 20px;
+  position: relative;
+  text-align: center;
+}
+.cat_filter text{
+  display: inline-block;
+  max-width: 80%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  line-height: 40px;
+}
+/* .city_fiflter .active{
+  color: #000;
+} */
+.active text{
+  display: block;
+  width: 13px;
+  height: 3px;
+  background: #FFF;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.cat_filter{
+  top: 0px;
+}
+.cat_filter view{
+  width: 33%;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+}
+.cat_filter image{
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: top;
+   position: relative; 
+   top: 10px; 
+}
+.cbd{
+  background: #fff;
+  position: absolute;
+  top: 46px;
+  width: 100%;
+  left: 0;
+  padding: 10px;
+  z-index: 999;
+  /* display: inline-flex; */
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.cbd navigator{
+  display: inline-block;
+  padding: 0 10px;
+  line-height: 30px;
+  color: #666;
+  background: #ECECEC;
+  border: 1px solid #d9d9d9;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  margin-right: 10px;
+}
+.cbd .active{
+  background: #000;
+  border-color: #000;
+  color: #fff;
+}
+.cbd .title{
+  width: 80%;
+  background: none;
+  border: none;
+  padding: 0;
+}
+.cbd image{
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+.line{
+  position: relative;
+  margin: 20px 0;
+  height: 1px;
+}
+.line:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: auto;
+    top: auto;
+    height: 1px;
+    width: 100%;
+    background-color: #ebebeb;
+    display: block;
+    z-index: 15;
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    transform: scaleY(0.33);
+}
+.shops{
+  background: #fff;
+  /* margin-top: 10px; */
+  padding:10px 0px 0;
+  margin-top: 110px;
+}
+.list{
+  display: flex;
+  
+}
+.list navigator{
+  display: block;
+  width: 60%;
+}
+.list .img{
+  width: 40%;
+  margin-right: 15px;
+}
+.img image{
+  width: 100%;
+  border-radius: 5px;
+}
+.line{
+  margin: 15px 0;
+}
+.info text{
+  font-size: 12px;
+  color: #666;
+  margin: 5px 0;
+  display: block;
+}
+.shop_title{
+  font-size: 16px;
+  color: #333;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.shop_vip{
+  color: #999;
+  font-size: 12px;
+}
+.shop_vip image{
+  width: 12px;
+  height: 12px;
+  position: relative;
+  top: 2px;
+}
+
+.not{
+  font-size: 14px;
+  text-align: center;
+  padding-top: 50px;
+  color: #999;
+}
+.loading{
+  padding: 10px 0;
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+}
+.loading image{
+  width: 40px;
+  height:40px;
+  margin: auto;
+}
+ .back_top{
+  width: 35px;
+  height: 35px;
+  position: fixed;
+  bottom: 15px;
+  right: 10px;
+  z-index: 999;
+} 
+
+.banner{
+  background: #fff;
+  padding:5px 10px;
+  position: fixed;
+  top: 45px;
+  width: 100%;
+  left: 0;
+  display: inline-flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  z-index: 99;
+}
+.banner view{
+  width: 75%;
+  font-size: 14px;
+  font-weight: bolder;
+  line-height: 25px;
+}
+.banner .price{
+  color: #FD3737;
+  text-align: right;
+   width: 25%;
+}
+.banner .origin_price{
+  color: #999;
+  font-size: 12px;
+  text-align: right;
+  width: 25%;
+  text-decoration: line-through;
+}

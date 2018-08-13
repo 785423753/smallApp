@@ -1,0 +1,42 @@
+<view class='page' wx:if="data.serial_no">
+    <view class='top'>
+        <text class='title'>{{data.items[0].ware.title}}</text>
+        <text>{{data.items[0].ware.start_time}}-{{data.items[0].ware.end_time}}</text>
+        <text wx:if="{{data.status==1}}" class='status'>已支付</text>
+        <text wx:if="{{data.status==2}}" class='status'>已完成</text>
+        <text wx:if="{{data.status==3}}" class='status'>退款中</text>
+        <text wx:if="{{data.status==4}}" class='status'>已退款</text>
+        <text wx:if="{{data.status==5}}" class='status'>已过期</text>
+        <text wx:if="{{data.status==8}}" class='status'>有退票</text>
+        <text wx:if="{{data.status==0 || data.status==6 || data.status==7}}" class='status'>未付款</text>
+        <view class='xfm' wx:if="{{data.status !=0 && data.status!=6 && data.status!=7}}">
+            <text class='title title_1'>消费码</text>
+            <view wx:for="{{data.tickets}}" class='title'>
+            <text>{{item.captcha}} </text>
+            <text class='type' wx:if="{{item.ticket_status==0}}" >（待消费）</text>
+            <text class='type' wx:if="{{item.ticket_status==1}}" >（已消费）</text>
+            <text class='type' wx:if="{{item.ticket_status==2}}" >（退款中）</text>
+            <text class='type' wx:if="{{item.ticket_status==3}}" >（已退款）</text>
+            </view>
+            <image  bindtap='pre' src='{{imagePath}}'></image>
+        </view>
+    </view>
+
+    <view class='top' bindtap='openMap'>
+        <image  class='map' src='../images/map.png'></image>
+        <text style='display:inline-block'>{{data.items[0].ware.address}}</text>
+        <!-- <text>重庆鹅岭正街1号贰厂文创园</text> -->
+    </view>
+
+    <view class='top bottom'>
+        <text class='title title_1'>订单信息</text>
+        <text>订单号：{{data.serial_no}}</text>
+        <text>手机号：{{data.user_phone}}</text>
+        <text>数量：{{data.tickets.length}}张</text>
+        <text>单价：￥{{data.tickets[0].price}}</text>
+        <text  wx:if="{{data.status>0 && data.status<5 || data.status==8}}" >实付：￥{{data.price}}</text>
+        <navigator wx:if="{{data.status==1}}" url='../refund/refund?id={{data.id}}'>申请退款</navigator>
+    </view>
+</view>
+
+<canvas canvas-id='canvas'></canvas>

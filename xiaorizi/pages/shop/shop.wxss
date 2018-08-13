@@ -1,0 +1,310 @@
+page{
+  background: #f5f5f5;
+}
+.page{
+  height: 100vh;
+}
+.banner{
+  width: 100%;
+}
+.after{
+  position: relative;
+}
+.after:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: auto;
+    top: auto;
+    height: 1px;
+    width: 100%;
+    background-color: #cacaca;
+    display: block;
+    z-index: 15;
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    transform: scaleY(0.33);
+}
+.info{
+  background: #fff;
+  padding: 10px;
+}
+.info text{
+  display: block;
+}
+.name{
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.tag,.time{
+  font-size: 14px;
+  color: #999;
+}
+.time{
+  float: right;
+  padding: 0;
+}
+.address{
+  background: #fff;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+.address view{
+  padding: 5px 10px;
+  font-size: 14px;
+  color: #999;
+  padding-right: 30px;
+  position: relative;
+}
+.address image{
+  width: 20px;
+  position: absolute;
+  right: 10px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.address .phone{
+  width: 18px;
+}
+.content{
+  background: #fff;
+  padding: 5px 0;
+}
+.shop_name{
+  color: #000;
+  font-size: 16px;
+  text-align: center;
+  display: block;
+  margin: 15px 0;
+}
+.content view{
+  padding:0 10px;
+  line-height: 28px;
+  color: #666;
+  font-size: 14px;
+}
+.content image{
+  width: 100%;
+  margin: 5px 0;
+}
+
+/* 评论 */
+.comments{
+  background: #fff;
+  margin-top: 10px;
+  padding: 10px 0;
+}
+.comments .title{
+  display: block;
+  color: #666;
+  padding: 10px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.send_com view{
+  display: inline-block;
+  vertical-align: top;
+}
+.avatar,.photo{
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  /* border: 1px solid #333; */
+  overflow: hidden;
+  margin-right: 10px;
+  margin-left: 10px;
+  /* background: #eee; */
+}
+.avatar image{
+  width: 100%;
+}
+.post,.com_content{
+  width: 78%;
+}
+.post input{
+  width: 100%;
+  height: 30px;
+  border: 1px solid #d9d9d9;
+  font-size: 12px;
+  border-radius: 3px;
+  padding: 0 5px;
+}
+.post text{
+  color: orangered;
+  font-size: 14px;
+  float: right;
+  margin-top: 10px;
+}
+.post .cancle{
+  color: #999;
+  padding-right: 10px;
+}
+.com_list{
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #d9d9d9;
+  /* width: 95%; */
+  margin: 10px auto;
+  position: relative;
+}
+.child{
+  border-bottom: none;
+  border-top: 1px dashed #d9d9d9;
+  padding: 10px 0 0;
+  margin-bottom: 0;
+}
+.com_list>view{
+  display: inline-block;
+  vertical-align: top;
+}
+.cm{
+   text-align: right; 
+   height: 15px;
+}
+.cm image{
+  width: 20px;
+  position: absolute;
+  right: 0;
+  /* bottom: 5px; */
+}
+.com_name{
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 10px;
+}
+.com_info{
+  font-size: 12px;
+  color: #666;
+}
+.date{
+  position: absolute;
+  color: #999;
+  font-size: 12px;
+  right: 0;
+  top: 0;
+}
+.com_content{
+  width: 80%;
+}
+.photo{
+  margin-left: 0;
+}
+.photo image{
+  width: 100%;
+}
+.son{
+  width: 100%;
+  padding-top: 10px;
+}
+.footer{
+  width: 100%;
+  display: block;
+  color: #fff;
+  font-size: 16px;
+  line-height: 50px;
+  background: rgba(255, 69, 0, 0.79);
+  margin-top: 20px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+}
+.place{
+  height: 65px;
+  background: #fff;
+}
+.collect{
+  background: #fff;
+  text-align: center;
+  padding-bottom: 10px;
+}
+.collect image{
+  width: 40px;
+}
+ .back_top{
+  width: 35px;
+  height: 35px;
+  position: fixed;
+  bottom: 50px;
+  right: 5px;
+  z-index: 999;
+} 
+.collect{
+  position: absolute;
+  width: 30px;
+  top: 10px;
+  right: 10px;
+  z-index: 99;
+  background: none;
+}
+.footer{
+   background: none; 
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  text-align: center;
+  height: 65px;
+  padding: 5px 0px;
+  box-sizing: border-box;
+  display: inline-flex;
+  justify-content: space-around;
+}
+.footer view,.footer navigator{
+  display: inline-block;
+  width: 55px;
+  height: 55px;
+  text-align: center;
+  background: #000;
+  border-radius: 100%;
+  color: #fff;
+   box-shadow: 0 0 35px 1px rgba(0, 0, 0, 0.5); 
+   font-size: 12px;
+   position: relative;
+}
+.footer  text{
+  position: absolute;
+  bottom:-10px;
+  left:15px;
+}
+.footer image{
+  width: 25px;
+  height: 25px;
+  margin: 5px auto 0;
+  display: block;
+}
+.share{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  top: 0;
+  left: 0;
+}
+.address .yh{
+  color: #999;
+  font-size: 14px;
+  margin-top: 15px;
+   padding:0 83px; 
+  position: relative;
+  display: block;
+  padding-right: 100px;
+}
+.yh text{
+  position: absolute;
+  left: 10px;
+  top: 0;
+}
+.yh .pass{
+  left: auto;
+  right: 10px;
+   color: #FEA72B;
+  /* bottom: 0; */
+  /* margin: auto; */
+  /* height: 16px; */
+}

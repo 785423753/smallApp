@@ -1,0 +1,60 @@
+{
+  "pages":[  
+    "pages/load/load",
+    "pages/user/user",
+    "pages/ticket/ticket", 
+    "pages/event/event",
+    "pages/event2/event",
+    "pages/pay/pay",
+    "pages/index/index",
+    "pages/openshop/openshop",
+    "pages/vip/vip",
+     "pages/list/list",
+    "pages/order/order",
+    "pages/refund/refund",
+    "pages/shop/shop",
+    "pages/like/like",
+    "pages/wish/wish",
+    "pages/shopList/shopList",
+    "pages/orderDetail/orderDetail",
+    "pages/card/card"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "小日子",
+    "navigationBarTextStyle":"#fff",
+    "qbDebugKey":"77a355991f7d6d47756f2dc2bc887b31"
+  },
+  "tabBar": {
+    "backgroundColor":"#fff",
+    "color": "#666",
+    "selectedColor": "#000",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "好店",
+        "iconPath":"pages/images/shop_1.png",
+        "selectedIconPath":"pages/images/shop_2.png"
+      },
+      {
+        "pagePath": "pages/ticket/ticket",
+        "text": "门票",
+        "iconPath": "pages/images/ticket_1.png",
+        "selectedIconPath": "pages/images/ticket_2.png"
+      },
+      {
+        "pagePath": "pages/vip/vip",
+        "text": "PASS卡",
+        "iconPath": "pages/images/pass_1.png",
+        "selectedIconPath": "pages/images/pass_2.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "pages/images/my_1.png",
+        "selectedIconPath": "pages/images/my_2.png"
+      }
+    ]
+  }
+}

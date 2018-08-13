@@ -1,0 +1,105 @@
+<image  mode="widthFix" style='width:100%' src='../images/img_banner@2x.png'></image>
+<view class="vip_detail" wx:if="{{list.hot_shop}}">
+      <view class='title_1'>PASS卡独享优惠</view>
+      <view class='title_2'>那些你值得去的网红店</view>
+        <navigator wx:for="{{list.hot_shop}}" class='before new_list' url="../shop/shop?id={{item.id}}">
+            <view class='title'>{{item.title}}</view>
+            <view class='name'>{{item.name}} <text>#{{item.tag.name}}</text></view>
+            <view class='name'>专属福利：{{item.for_vip}}</view>
+        </navigator>
+      <!-- <scroll-view scroll-x class='shops'>
+          <navigator class='shop' wx:for="{{list.hot_shop}}"  url="../shop/shop?id={{item.id}}">
+                <image mode="widthFix" src='{{item.img}}'></image>
+                <text wx:if="{{item.for_vip.length < 10}}" class='vip_tag'>{{item.for_vip}}</text>
+                 <text wx:else class='vip_tag'>专享福利</text>
+                <view class='shop_name'>{{item.name}}</view>
+                <view>{{item.title}}</view>
+          </navigator>
+      </scroll-view> -->
+      <!-- <view class='after'></view> -->
+
+      <view class='title_1'>每周上新</view>
+      <view class='title_2'>闲时，跟着小日子过美好生活</view>
+        <navigator wx:for="{{list.new_shop_data}}" class='before new_list' url="../shop/shop?id={{item.id}}">
+            <view class='title'>{{item.title}}</view>
+            <view class='name'>{{item.name}} <text>#{{item.tag.name}}</text></view>
+            <view class='name'>专属福利：{{item.for_vip}}</view>
+        </navigator>
+      <!-- <scroll-view scroll-x class='shops'>
+          <navigator  class='shop' wx:for="{{list.new_shop_data}}"  url="../shop/shop?id={{item.id}}">
+                <image mode="widthFix" src='{{item.img}}'></image>
+                <text wx:if="{{item.for_vip.length < 10}}" class='vip_tag'>{{item.for_vip}}</text>
+                 <text wx:else class='vip_tag'>专享福利</text>
+                <view class='shop_name'>{{item.name}}</view>
+                <view>{{item.title}}</view>
+          </navigator>
+      </scroll-view> -->
+      <!-- <view class='after'></view> -->
+
+      <!-- <view class='title_1'>丰富的小店类型</view>
+      <view class='title_2'>用一张pass卡享受不同小店特权</view>
+      <view class='cat'>
+          <navigator url="../list/list?tag=7291&city=chengdu">
+              <image mode="widthFix" src='../images/img_tianpin@2x.png'></image>
+              <view><text class='cat_name'>甜品店</text><text>低至八折</text></view>
+          </navigator>
+          <navigator url="../list/list?tag=7278&city=chengdu">
+              <image mode="widthFix" src='../images/img_kafei@2x.png'></image>
+              <view><text class='cat_name'>咖啡馆</text><text>低至八折</text></view>
+          </navigator>
+          <navigator url="../list/list?tag=7368&city=chengdu">
+              <image mode="widthFix" src='../images/img_gongzuoshi@2x.png'></image>
+              <view><text class='cat_name'>工作室</text><text>低至八折</text></view>
+          </navigator>
+           <navigator url="../list/list?tag=7282&city=chengdu">
+              <image mode="widthFix" src='../images/img_lvshe@2x.png'></image>
+              <view><text class='cat_name'>旅舍</text><text>最高可省500元</text></view>
+          </navigator>
+          <navigator url="../list/list?tag=7236&city=chengdu">
+              <image mode="widthFix" src='../images/img_canba@2x.png'></image>
+              <view><text class='cat_name'>特色餐吧</text><text>免费送招牌菜</text></view>
+          </navigator>
+          <navigator url="../list/list?tag=7304&city=chengdu">
+              <image mode="widthFix" src='../images/img_cha@2x.png'></image>
+              <view><text class='cat_name'>茶空间</text><text>赠送免费茶饮</text></view>
+          </navigator>
+         
+      </view>
+      <view class='after'></view> -->
+
+      <view class='title_1'>PASS卡独家尊享 
+      <navigator class='more' url='../list/list?city=chengdu'>更多</navigator></view>
+        <navigator wx:for="{{list.shops}}" class='before new_list' url="../shop/shop?id={{item.id}}">
+            <view class='title'>{{item.title}}</view>
+            <view class='name'>{{item.name}} <text>#{{item.tag.name}}</text></view>
+            <view class='name'>专属福利：{{item.for_vip}}</view>
+        </navigator>
+      <!-- <view style='margin-top:30px;'  wx:for="{{list.shops}}">
+          <view class='list'>
+            <navigator  url="../shop/shop?id={{item.id}}" class='img'><image  mode="widthFix" src='{{item.img}}'></image></navigator>
+            <navigator  url="../shop/shop?id={{item.id}}" class='info'>
+                <view class='shop_title'>{{item.title}}</view>
+                <text>{{item.name}}</text>
+                <text>{{item.address}}</text>
+                <view class='shop_vip'>
+                    <image src='../images/icon_hui@2x.png'></image>
+                    {{item.for_vip}}
+                </view>
+            </navigator>
+          </view>
+          <view class='after line'></view>
+      </view> -->
+      <navigator url='../list/list?city=chengdu' class='get_more'>查看更多特色小店</navigator>
+      <view class='footer'>
+        <navigator wx:if='{{!vip_info.is_vip}}' url='../order/order?price={{list.tickets[0].price}}'>
+            {{list.tickets[0].price}}元立即开通
+            <text>享一年优惠特权</text>
+        </navigator>
+        <navigator wx:if='{{vip_info.is_vip}}' url='../card/card'>
+             <text style='margin:5px 0;'>您已开通PASS卡，查看我的PASS卡</text>
+        </navigator>
+      </view>
+      
+      
+</view>
+

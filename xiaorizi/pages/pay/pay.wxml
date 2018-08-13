@@ -1,0 +1,36 @@
+<view class='order_info' wx:if="{{data}}">
+    <view class='img'><image mode='widthFix' src='{{data.img}}'></image></view>
+    <view class='price_info'>
+       <text class='title'>{{data.title}}</text>   
+       <view><text class='type'>￥</text><text class='price'>{{data.price}}</text>
+       <text class='tag'>{{data.name}}</text></view> 
+    </view>
+</view>
+
+<view class='order'>
+    <view>
+      <text class='label'>数量</text>
+      <view class='change'>
+          <view>
+              <image wx:if="{{amount <= min}}" src='../images/ticket_reduce_2@2x.png'></image>
+              <image bindtap='change' data-type='-1' wx:if="{{amount > min}}"  src='../images/ticket_reduce_1@2x.png'></image>
+          </view>
+          <text>{{amount}}</text>
+          <view>
+              <image wx:if="{{amount >= max}}"  src='../images/ticket_add_2.png'></image>
+              <image bindtap='change' data-type='1' wx:if="{{amount < max}}"  src='../images/ticket_add_1.png'></image>
+          </view>
+      </view>
+    </view>
+    <view>
+      <text class='label'>实付款</text><text class='jiage'><text>￥</text>{{price}}</text>
+    </view>
+    <view>
+      <text class='label'>手机号</text>
+      <input class='tel' type='number' placeholder='请输入' value='{{tel}}'  bindinput="bindKeyInput" ></input>
+    </view>
+</view>
+
+<view style='padding:0 15px;'>
+  <button class='post' bindtap='post'>提交订单</button>
+</view>

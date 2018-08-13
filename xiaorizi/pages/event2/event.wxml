@@ -1,0 +1,59 @@
+<view wx:if="{{event.title}}">
+  <swiper style='height:500rpx;' indicator-dots="true" indicator-color="rgba(255, 255, 255, .5)"
+   indicator-active-color="rgba(255, 255, 255, 1)">
+    <block wx:for="{{event.imgs}}" wx:if="{{item}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" mode='widthFix'/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='top'>
+      <view class='title'>{{event.title}}</view>
+      <view class='price_info'>
+          <text class='type'>￥</text><text class='price'>{{event.tickets[0].origin_price}}</text>
+          <!-- <view class='tag'><image src='../images/ticket_tagbg@2x.png'></image><text>普通票</text></view> -->
+          <!-- <view class='tip'><image src='../images/ticket_support@2x.png'></image> 随时退</view> -->
+      </view>
+      <view class='addr_info'>
+          <view class='addr' bindtap='openMap'>
+              <image src='../images/map.png'></image>
+              {{event.address}}
+          </view>
+          
+          <view class='addr'>
+              {{event.date.time_list[0].start_time}}~ {{event.date.time_list[0].end_time}}
+          </view>
+      </view>
+  </view>
+  <view class='ticket'>
+      <view class='tkt_title'>票务类型</view>
+      <view wx:for="{{event.tickets}}" class='tkt'>
+            {{item.name}} 
+            <image wx:if="{{choose == index}}" src='../images/my_check_2@2x.png'></image>
+            <image bindtap='choosetkt' data-index="{{index}}" wx:else src='../images/my_check_1@2x.png'></image>
+            <text>￥{{item.price}}</text>
+      </view>
+  </view>
+  
+  <view class='middle'>
+        <!-- <view class='tab'><text bindtap='tab' data-index='0' class='{{(current == 0)?"act":""}}'>景点介绍<text></text></text> -->
+        <!-- <text bindtap='tab' data-index='1' class='{{(current == 1)?"act":""}}'>购票须知<text></text></text></view> -->
+        <view class='content'>
+            <block  wx:for="{{event.content}}">
+                <text wx:if="{{!item.is_img}}" wx:for="{{item.content}}" wx:for-item="text">{{text}}</text>
+                <block wx:if="{{item.is_img}}" >
+                <image  mode='widthFix' wx:for="{{item.content}}" wx:for-item="img" wx:if="{{img}}" src='{{img}}'></image>  
+                </block>
+                
+            </block>
+        </view>
+        <!-- <view wx:if="{{current == 1}}" class='content'>
+              <text>{{event.ticket_rule}}</text>
+        </view> -->
+        
+  </view>
+
+   <navigator wx:if="{{!userId}}" url='../user/user' open-type='switchTab' class='next'>立即购买</navigator> 
+  <navigator wx:else  url='../pay/pay?item={{event.tickets[choose].id}}&title={{event.title}}&img={{event.img}}&id={{event.id}}&price={{event.tickets[choose].price}}&name={{event.tickets[choose].name}}' class='next'>立即购买</navigator>
+  <view class='tel' bindtap='tel'><image src='../images/phone.png'></image></view>
+</view>

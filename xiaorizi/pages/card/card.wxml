@@ -1,0 +1,27 @@
+
+<view wx:if="{{!vip_info.is_vip}}" class='not_vip'>
+      您还没有PASS卡
+
+      <navigator url='../vip/vip' open-type='switchTab'>开通PASS卡</navigator>
+</view> 
+
+<view  wx:if="{{vip_info.is_vip}}">
+  <view class="myvip">
+  <text style='right:auto;left:14%;bottom:auto;top:15px;'>{{vip_info.card_id}}</text>
+    <image class='vip' mode="widthFix" src='../images/new_vip.png'></image>
+    <text>{{vip_info.end_time}}</text>
+  </view>
+  <view class='title'>使用说明</view>
+  <view class='info'>
+      <text>1.该卡适用于成渝美好生活PASS卡所有商户，并享受相应的优惠特权；</text>
+      <text>2.进PASS卡商户店内消费时请出示此页；</text>
+      <text>3.每个PASS卡商户的店内优惠不一样，使用时请查看该店的PASS卡优惠信息；</text>
+      <text>4.适用商务数量和优惠，我们将实时更新，请以当天消费时看到的为准；</text>
+      <text>5.本卡仅作为优惠凭证，不可充当现金使用；</text>
+      <text>6.本卡一经售出，不可退换和转让；</text>
+      <text>7.美好生活PASS卡自购买日开始，有效期一年。过期后不能再享受优惠，需再次购买；</text>
+      <text>8.有任何疑问，请添加专属客服微信：xiaoriziapp。</text>
+      <navigator url='../list/list?city=chengdu' class='get_more'>查看川渝PASS卡适用商家》</navigator>
+  </view>
+   
+</view>

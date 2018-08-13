@@ -1,0 +1,69 @@
+<!--index.wxml-->
+<!-- 导航 -->
+<view class='search'>
+ <view class="city_filter">
+    <picker bindchange="cityChange" value="{{city_index}}" range="{{city_arry}}"  range-key="name">
+      <view wx:if="{{city_arry[city_index]}}" class="picker">
+        {{city_arry[city_index].name}}
+      </view>
+      <view wx:else class="picker">城市</view>
+      <!-- <view wx:if="{{!city_arry[city_index]}}" class="picker">
+        定位中...
+      </view> -->
+      <image mode="widthFix" src='../images/bottom2.png'></image>
+    </picker>
+  </view>
+  <icon bindtap='search' type="search" size="18" color="#999"/>
+  <input bindinput='inputChange' value='{{keyword}}' placeholder='输入关键字搜索'  />
+  <text bindtap='cancle' class='cancel'>取消</text>
+</view>
+  <scroll-view scroll-with-animation="{{true}}"  wx:id="{{tagList}}" scroll-left="{{scrollLeft}}" class="scroll-view_H after" scroll-x style="width: 100%" >
+    <view bindtap='changTag' data-index="{{index}}" data-id="{{item.id}}" wx:for="{{tagList}}" wx:key="name"  class="scroll-view-item_H {{(index==tag_index)? 'active':''}}">{{item.name}}</view>
+  </scroll-view>
+<!-- 导航 -->
+
+<scroll-view style='height:{{height}}px' class='main'  bindscroll="scroll" scroll-top="{{top}}"  scroll-y="{{true}}" bindscrolltolower="scrollNext">
+
+  <!-- 小店筛选 -->
+
+  <!-- 列表 -->
+  <!-- <view  wx:for="{{shopList}}" class='list after'>
+    <view bindtap='toTag' data-id="{{item.space_tag.id}}" class='photo'>
+      <text data-id="{{item.space_tag.id}}">{{item.space_tag.name}}</text><image mode="widthFix" src='{{item.space_tag.icon}}' wx:if="{{item.space_tag.icon}}"></image>
+      <view class='mb'></view>
+    </view>
+    <view class='info'>
+        <text wx:if="{{item.distance}}" class='distance'>{{item.distance}}km</text>  
+      <navigator  url="../shop/shop?id={{item.id}}" class='name'>{{item.name}}</navigator>
+       <navigator wx:if="{{item.for_vip}}" url="../vip/vip" open-type='switchTab'  class='vip_shop'>PASS卡专属优惠</navigator> 
+       <text class='price'>人均：￥50</text> 
+      <text class='intro'>{{item.recommend_reason}}</text>
+      <navigator  url="../shop/shop?id={{item.id}}">阅读全文 > </navigator>
+      <navigator url="../shop/shop?id={{item.id}}" wx:if="{{item.imgs}}" class='imgs'>
+        <block wx:for="{{item.imgs}}" wx:for-index="idx" wx:for-item="img" >
+            <view  wx:if="{{idx < 9}}"  class='img'><image  mode="widthFix" src='{{img}}'></image></view>
+        </block>  
+      </navigator>
+
+      <view class='addr'><image mode="widthFix" src='../images/map.png'></image>{{item.address}}</view>
+    </view>
+  </view> -->
+  <navigator wx:for="{{shopList}}" class='after new_list' url="../shop/shop?id={{item.id}}">
+            <view class='title'>{{item.title}}</view>
+            <view class='name'>{{item.name}} <text>#{{item.space_tag.name}}</text></view>
+            <!-- <view class='name'>专属福利：{{item.for_vip}}</view> -->
+  </navigator>
+
+  <view wx:if="{{error == 0}}" class='loading'>
+    <image wx:if="{{next_page}}" mode="widthFix" src='https://pic.huodongjia.com/static/images/2222023L0-8.gif'></image>
+    <text wx:if="{{!next_page}}">加载完成！</text>
+  </view>
+  <view bindtap='getData' wx:if="{{error == 1}}" class='refresh'>
+    重新加载
+  </view>
+  <image wx:if="{{s_top > 10}}" mode="widthFix" bindtap='backTop' class='back_top' src='../images/back_top.png'></image>
+</scroll-view>
+
+
+
+

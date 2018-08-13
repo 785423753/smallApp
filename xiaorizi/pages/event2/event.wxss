@@ -1,0 +1,190 @@
+/* pages/detail/detail.wxss */
+.slide-image{
+  width: 100%;
+}
+.top{
+  background: #fff;
+  margin-bottom: 10px;
+  padding: 15px 10px;
+}
+.title{
+  color: #3C3C3C;
+  font-size: 36rpx;
+  font-weight: 600;
+}
+.price_info{
+ color: #F95C36;
+ margin: 10px 0;
+}
+.type{
+  font-size: 12px;
+  font-weight: 600;
+}
+.price{
+  font-size: 40rpx;
+  font-weight: 600;
+}
+.tag{
+  display: inline-block;
+  width: 35px;
+  height: 15px;
+  position: relative;
+  font-size: 10px;
+  text-align: center;
+  left: 5px;
+  top: -2px;
+}
+.tag image{
+   position: absolute; 
+  width: 100%;
+  height: 100%;
+   top: 0;
+  left: 0; 
+}
+.tag text{
+  position: relative;
+  z-index: 99;
+  top: -1px;
+}
+.tip{
+  float: right;
+  color: #7C7E7E;
+  font-size: 12px;
+  position: relative;
+  top: 5px;
+}
+.tip image{
+  width: 24rpx;
+  height: 24rpx;
+  position: relative;
+  top: 1px;
+}
+.map{
+  float: right;
+  margin-top: 8px;
+  position: relative;
+}
+.map text{
+  position: absolute;
+  width: 1px;
+  height: 20px;
+  background: #B9B9B9;
+  left: -15px;
+  bottom: 8px;
+}
+.map image{
+  height: 54rpx;
+  width: 54rpx;
+}
+.addr{
+  color: #7C7E7E;
+  font-size: 24rpx;
+  margin-top: 20rpx;
+}
+.addr image{
+  width: 40rpx;
+  height: 40rpx;
+  position: relative;
+  top: 4px;
+}
+.ticket{
+  background: #fff;
+  margin-bottom: 10px; 
+  padding: 20px 10px;
+}
+.tkt_title{
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 600;
+}
+.tkt{
+  font-size: 24rpx;
+  color: #7C7E7E;
+  margin-top: 15px;
+}
+.tkt text{
+  float: right;
+  margin-right: 10px;
+}
+.tkt image{
+  width: 30rpx;
+  height: 30rpx;
+  float: right;
+}
+.middle{
+  background: #fff;
+  padding-bottom: 80px;
+}
+.tab{
+  height: 40px;
+  border-bottom: 1px solid #E8E8E8;
+}
+.tab>text{
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+  line-height: 40px;
+  font-size: 30rpx;
+  color: #3C3C3C;
+  position: relative;
+}
+.tab text text{
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background: #F95C36;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: none;
+}
+.tab .act{
+  color: #F95C36;
+}
+.tab .act text{
+  display: block;
+}
+
+.next{
+  position: fixed;
+  width: 70%;
+  line-height: 50px;
+  color: #FFF;
+  font-size: 34rpx;
+  background: #F95C36;
+  text-align: center;
+  z-index: 99;
+  bottom: 0;
+  right: 0;
+}
+.content{
+  padding: 15px 0;
+}
+.content text{
+  display: block;
+  color: #5D5D5D;
+  line-height: 28px;
+  font-size: 15px;
+  padding: 0 10px;
+}
+.content image{
+  width: 100%;
+  display: block;
+  margin: 10px 0;
+}
+.tel{
+  position: fixed;
+  width: 30%;
+  height: 50px;
+  background: #fff;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+}
+.tel image{
+  width: 30px;
+  height: 30px;
+  margin:10px auto;
+  display: block;
+}

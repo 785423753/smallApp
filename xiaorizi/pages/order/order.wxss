@@ -1,0 +1,71 @@
+.top{
+  background: #fff;
+  padding: 0 10px;
+  margin-bottom: 10px;
+}
+.top view{
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 1px solid #f5f5f5;
+}
+.top text{
+  display: block;
+  font-size: 16px;
+  color: #000;
+  padding: 10px 0; 
+}
+.top .price{
+  color: #FD3737;
+}
+
+.center{
+  background: #fff;
+  padding-bottom: 10px;
+}
+.pay_way{
+  padding: 10px;
+  width: 100%;
+  color: #666;
+  font-size: 14px;
+  border-bottom: 1px solid #f5f5f5;
+}
+.pay_way image{
+  width: 20px;
+  position: relative;
+  top: 4px;
+  margin-right: 5px;
+}
+.pay_way radio{
+  float: right;
+   position: relative;
+   top: 1px;
+}
+.pay>text{
+  display: inline-block;
+  width: 50%;
+  line-height: 50px;
+  text-align: center;
+  font-size: 16px;
+  color: #333;
+}
+.title{
+  font-size: 16px;
+  border-bottom: 1px solid #f5f5f5;
+  padding: 10px;
+}
+.price text{
+  font-size: 12px;
+  color: #999;
+  text-decoration: line-through;
+}
+.post{
+  width: 120px;
+  line-height: 40px;
+  background: #201F1F;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  margin: 20px auto;
+}

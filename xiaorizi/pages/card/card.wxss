@@ -1,0 +1,65 @@
+page{
+  background: #fff;
+}
+.vip{
+  width: 80%;
+  display: block;
+  margin: auto;
+  }
+.not_vip{
+  padding-top: 30%;
+  color: #333;
+  font-size: 14px;
+  text-align: center;
+}
+.not_vip navigator{
+  border: 1px solid #d9d9d9;
+  width: 200px;
+  margin: 15px auto;
+  line-height: 30px;
+}
+.myvip{
+  position: relative;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.myvip text{
+  position: absolute;
+  bottom: 15px;
+  right: 13%;
+  color: #000;
+  font-size: 14px;
+}
+.title{
+  width: 65px;
+  line-height: 30px;
+  margin: 20px auto;
+  color: #333;
+  font-size: 14px;
+  text-align: center;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+.info{
+  padding: 0 15px;
+}
+.info text{
+  display: block;
+  
+  color: #666;
+  line-height: 25px;
+  font-size: 12px;
+  margin-bottom: 3px;
+}
+.get_more{
+  color: #5ECC94;
+  font-size: 14px;
+  display: block;
+  line-height: 30px;
+  width: 200px;
+  text-align: center;
+  border: 1px solid #5ECC94;
+  border-radius: 2px;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}

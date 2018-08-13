@@ -1,0 +1,56 @@
+<view>
+<!-- 我的首页 -->
+  <view class='swiper-item'>
+  <view class='info'>
+  <open-data class="userinfo-avatar" type="userAvatarUrl"></open-data>
+  <open-data class="userinfo-name"  type="userNickName"></open-data>
+</view>
+   
+      <button wx:if="{{!user_id}}" loading="{{loading}}" bindgetuserinfo="bindGetUserInfo"
+       open-type="getUserInfo" class='btn' bindtap='login'>授权登录</button>
+      <view wx:else>
+          <view class='menue'>
+              <navigator url='../like/like?userid={{user_id}}' class='after'>
+              <image mode="widthFix" src='../images/zhuye-shoucang@2x.png'></image>我的收藏</navigator> 
+
+              <navigator class='after' url='../card/card?userid={{user_id}}'>
+              <image mode="widthFix" src='../images/wodehuiyuanka@2x.png'></image>我的PASS卡</navigator>
+
+              <!-- <navigator class='after' url='../myorder/myorder?userid={{user_id}}'>
+              <image mode="widthFix" src='../images/wodehuiyuanka@2x.png'></image>我的门票</navigator> -->
+              <view class='wechat'>
+              <image mode="widthFix" src='../images/wodexiaoxi@2x.png'></image>联系我们
+              <button  session-from="weapp"  open-type="contact"></button>
+              <!-- <contact-button session-from="weapp" size="27"></contact-button> -->
+              </view>   
+          </view>
+          <view class='content' wx:if="{{list.length > 0}}">
+            <view class='title_1'>我的门票</view> 
+            <view>
+                  <view class='list' wx:for="{{list}}">    
+                          <navigator url='../orderDetail/orderDetail?id={{item.id}}' class='order_info'>
+                              <image src='{{item.items[0].ware.img}}'></image>
+                              <view class='title'>{{item.items[0].ware.title}}</view>
+                              <view class='time'>{{item.items[0].item_name}}</view>
+                              <view><text class='price'>{{item.tickets.length}}张， ￥{{item.price}}</text>
+
+                              <text wx:if="{{item.status==1}}" class='status status_0'>已支付</text>
+                              <text wx:if="{{item.status==2}}" class='status'>已完成</text>
+                              <text wx:if="{{item.status==3}}" class='status status_0'>退款中</text>
+                              <text wx:if="{{item.status==4}}" class='status'>已退款</text>
+                              <text wx:if="{{item.status==5}}" class='status'>已过期</text>
+                              <text wx:if="{{item.status==8}}" class='status'>有退票</text>
+                              <text wx:if="{{item.status==0 || item.status==6 || item.status==7}}" class='status status_0'>未付款</text>
+                              </view>
+                          </navigator>
+                          <view wx:if="{{item.status==1 || item.status==8}}" class='ewm' bindtap='preview' data-id="{{index}}">
+                              <image data-id="{{index}}" src='../images/my_code@2x.png'></image>
+                              <text data-id="{{index}}">扫码验证</text>
+                          </view> 
+                  </view>
+            </view>
+          </view>
+      </view>
+  </view>
+</view>
+<canvas canvas-id='canvas'></canvas>

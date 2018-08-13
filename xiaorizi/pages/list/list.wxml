@@ -1,0 +1,91 @@
+<view wx:if="{{city}}">
+
+  <!-- <view wx:if="{{city}}" class="city_fiflter after">
+      <navigator wx:for="{{city}}" url='../list/list?city={{item.pinyin}}&tag=&cbd=' class='{{(item.pinyin == current_city) ? "active" : ""}}' open-type='redirect'>
+      {{item.name}} <text></text>
+      </navigator>
+  </view> -->
+
+  <view class='cat_filter after'>
+      <view bindtap='filter' data-type='2'>
+      <text data-type='2' wx:for="{{city}}" wx:if="{{item.pinyin == current_city}}" >{{item.name}}</text> 
+      <image data-type='2' src='../images/bottom.png'></image></view>
+
+      <view bindtap='filter' data-type='0'>
+      <text data-type='0' wx:if="{{cbd}}">{{cbd}}</text>  <text data-type='0' wx:else>商圈</text> 
+      <image data-type='0' src='../images/bottom.png'></image></view>
+      <view bindtap='filter' data-type='1'>
+      <text data-type='1' wx:if="{{tag}}">{{tag}}</text>  <text data-type='1' wx:else>分类</text>  
+      <image data-type='1' src='../images/bottom.png'></image></view>
+  </view>
+
+  <view class='cbd' style='display:{{(type == 2) ? "inline-flex" : "none"}}'>
+      <image bindtap='close' src='../images/top.png'></image>
+      <block wx:for="{{city}}">
+        <navigator  open-type='redirect' url='../list/list?city={{item.pinyin}}&tag=&cbd='
+         class='{{(current_city == item.pinyin) ? "active" : ""}}'>{{item.name}}</navigator>   
+      </block>    
+  </view>
+
+  <view class='cbd' style='display:{{(type == 0) ? "inline-flex" : "none"}}'>
+      <image bindtap='close' src='../images/top.png'></image>
+      <navigator url='../list/list?city={{current_city}}&tag={{current_tag}}&cbd=' open-type='redirect' class='title'>全部</navigator>
+      <block wx:for="{{city}}">
+        <block wx:if="{{item.pinyin == current_city}}">
+          <navigator wx:for="{{item.cbd}}" wx:for-item="c"  open-type='redirect'
+          url='../list/list?city={{current_city}}&tag={{current_tag}}&cbd={{c.id}}' class='{{(cbd == c.name) ? "active" : ""}}'>{{c.name}}</navigator>
+        </block>     
+      </block>    
+  </view>
+
+  <view class='cbd' style='display:{{(type == 1) ? "inline-flex" : "none"}}'>
+      <image bindtap='close' src='../images/top.png'></image>
+      <navigator open-type='redirect' url='../list/list?city={{current_city}}&tag=&cbd={{current_cbd}}' class='title'>全部</navigator>
+      <block wx:for="{{city}}">
+        <block wx:if="{{item.pinyin == current_city}}">
+          <navigator wx:for="{{item.tags}}" wx:for-item="t"  open-type='redirect'
+          url='../list/list?city={{current_city}}&tag={{t.id}}&cbd={{current_cbd}}' class='{{(tag == t.name) ? "active" : ""}}'>{{t.name}}</navigator>
+        </block>     
+      </block>    
+  </view>
+
+  <view class='banner' bindtap='tovip'>
+      <view>{{tickets.name}}</view>
+      <view class='price'>￥{{tickets.price}}/年</view>
+      <view>享好店优惠 购买即可获得特权</view>
+      <view class='origin_price'>原价￥{{tickets.origin_price}}/年</view>
+  </view>
+
+  <scroll-view class='shops' style='height:{{height}}px' bindscroll="scroll" scroll-top="{{top}}"  scroll-y="{{true}}" bindscrolltolower="scrollNext">
+    <navigator wx:for="{{shop}}" class='before new_list' url="../shop/shop?id={{item.id}}">
+            <view class='title'>{{item.title}}</view>
+            <view class='name'>{{item.name}} <text>#{{item.tag.name}}</text></view>
+            <view class='name'>专属福利：{{item.for_vip}}</view>
+    </navigator>
+      <!-- <view wx:for="{{shop}}">
+          <view class='list'>
+            <navigator  url="../shop/shop?id={{item.id}}" class='img'><image  mode="widthFix" src='{{item.img}}'></image></navigator>
+            <navigator  url="../shop/shop?id={{item.id}}" class='info'>
+                <view class='shop_title'>{{item.title}}</view>
+                <text>{{item.name}}</text>
+                <text>{{item.address}}</text>
+                <view class='shop_vip'>
+                    <image src='../images/icon_hui@2x.png'></image>
+                    {{item.for_vip}}
+                </view>
+            </navigator>
+          </view>
+          <view class='line'></view>
+      </view> -->
+      
+       
+
+        <view wx:if="{{not}}" class='not'>没有找到相关小店！</view>
+          <view class='loading'>
+            <image wx:if="{{next_page}}" mode="widthFix" src='https://pic.huodongjia.com/static/images/2222023L0-8.gif'></image>
+            <text wx:if="{{!next_page && !not}}">加载完成！</text>
+          </view>
+          <image wx:if="{{s_top != 0}}" mode="widthFix" bindtap='backTop' class='back_top' src='../images/back_top.png'></image>
+  </scroll-view> 
+
+</view>

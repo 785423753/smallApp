@@ -1,0 +1,13 @@
+<!-- 我的收藏 -->
+
+<!-- <navigator url='../shop/shop?id={{item.root_id}}' wx:if="{{shopList}}" wx:for="{{shopList}}"  class='list'>
+      <image mode="widthFix" src='{{item.img}}'></image>
+      <view class='title'>{{item.content}}</view>
+</navigator> -->
+  <navigator wx:for="{{shopList}}" class='before new_list' url="../shop/shop?id={{item.id}}">
+          {{item.content}}
+    </navigator>
+  <view class='not' wx:if="{{not}}" >
+    还没有收藏的小店
+  </view>
+<!-- 我的收藏 -->

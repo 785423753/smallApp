@@ -1,0 +1,135 @@
+<view wx:if="{{page == 0}}">
+  <image mode="widthFix" style="width:100%;display:block;" src="../images/banner.jpg"></image>
+
+  <view class='top'>
+      <view class='title_1'>开一间小店</view>
+      <text>做自己热爱的事，就是做理想中的自己。</text>
+      <text>这里有关于开店你想知道的一切。</text>
+      <text>或许你想开一家咖啡馆，但不知产品卖点和定价策略；</text>
+      <text>或许你想开一家花店，却只知道野兽派；</text>
+      <text>或许你想开一家甜品店，却不明白店铺氛围如何衬托，</text>
+      <text>卫生如何管理；</text>
+      <text>...</text>
+      <text>小日子APP将会把探访10000家小店及千万投资换来</text>
+      <text>的经验和资源，为你打造综合性的商业学习环境，帮助你从零开始学习开店，做一位认真的创业者。</text>
+      <view class='line'></view>
+       <view class='title_1'>开店必修课</view>
+       <view class='item'>
+            <image src='../images/icon1.png'></image>
+            <text class='title_text'>定制专属学习包</text>
+            <view>量身精选实体类别书籍，从经营策略到实际操作，涵盖开店基础和分门别类的详细指导。
+            </view>
+       </view>
+        <view class='item'>
+            <image src='../images/icon2.png'></image>
+            <text class='title_text'>线上课程与视频</text>
+            <view>从直播小班课到大咖视频教学，自视频上线起一年内商业信息及时分享。
+            </view>
+       </view>
+        <view class='item'>
+            <image src='../images/icon3.png'></image>
+            <text class='title_text'>线下沙龙邀请</text>
+            <view>为你提供更多商业理念及想法，提供多样成功案例参考。
+            </view>
+       </view>
+        <view class='item'>
+            <image src='../images/icon4.png'></image>
+            <text class='title_text'>赠送美好生活PASS卡</text>
+            <view>作为商学院第一批种子用户，还赠送小日 子美好生活PASS卡，享受成渝两地300 家特色小店独家优惠。
+            </view>
+       </view>
+       <view class='line'></view>
+       <view class='title_1'>造梦者，有胆有脑</view>
+       <text>青春，就算不拼搏也是要过去的，趁你变成精于世故和
+计较得失的成年人之前，何不抡圆了胳膊大干一场呢？
+跟着这些“造梦者”一起，来开一家店！
+       </text>
+        <view class='title_2'>购买后需留下的信息:</view>
+        <view class='link_way'>
+        <view class='label'>姓名</view>
+          <input confirm-type="next" id="contactor" bindinput="bindKeyInput"  placeholder='您的姓名'></input>
+        </view>
+       <view class='link_way'>
+        <view class='label'>微信号</view>
+        <input confirm-type="next" id="wechat" bindinput="bindKeyInput"  placeholder='您的微信'></input>
+      </view>
+      <view class='link_way'>
+        <view class='label'>电话</view>
+        <input type='number'  id="phone" bindinput="bindKeyInput" placeholder='您的电话'></input>
+      </view>
+      <view class='link_way'>
+        <view class='label'>寄送地址</view>
+        <input confirm-type="done" id="address" bindinput="bindKeyInput"  placeholder='请提供详细的地址'></input>
+      </view>
+      <view class='footer'>
+          <view bindtap='open'>什么是诚意金？</view><view bindtap='post' class='post'>{{price}}元诚意咨询金</view>
+      </view>
+  </view>
+
+  <view class='bottom'>
+      <view class='title_2'>我的小店梦</view>
+      <view class='filter'>
+          我在
+            <input  id="city" bindinput="bindKeyInput" class='city' placeholder='请输入城市'></input>
+      </view>
+
+      <view class='filter'>
+          我是
+          <picker bindchange='pickerSex'  mode="multiSelector" range="{{arry_1}}" value='{{value}}'>
+            <view class="picker">
+              <text wx:if="{{value[0] === ''}}">请选择</text> {{arry_1[0][value[0]]  }}  {{arry_1[1][value[1]]}}
+              <image src='../images/icon_right@2x.png'></image>
+            </view>
+          </picker>
+      </view>
+
+      <view class='filter'>
+          我想开一家
+            <picker bindchange="picker" value="{{tag}}" range-key="name" range="{{tagdata}}" value='tag'>
+              <view class="picker">
+                <text wx:if="{{!tag}}">请选择</text> {{tagdata[tag].name}}
+                <image src='../images/icon_right@2x.png'></image>
+              </view>
+            </picker>
+      </view>
+
+      <view class='title_2'>选择开店方式</view>
+      <view class='wish_content'>  
+          我愿意付出<input id="pay" type='number'  bindinput="bindKeyInput" placeholder='金额'></input>万元以
+          <picker  bindchange="picker_way" range-key="name" range="{{way}}" value='info.shoptype'>
+              <view class="ways">
+              <text style='color:#808080;' wx:if="{{!info.shoptype}}">方式</text>
+                {{way[info.shoptype].name}}
+                <image src='../images/icon_jiantou@2x.png'></image>
+              </view>
+            </picker>
+            形式开店。
+               <view wx:if="info.shoptype != '' ">{{des[info.shoptype]}}</view>           
+      </view>
+
+      <view class='link'>我愿意委托小日子来实现我的梦想，如果小日子能够实现我的梦想，请联系我：</view>
+
+      
+
+      
+  </view>
+</view>
+
+<view wx:if="{{page == 1}}" class='cyj'>
+    <image bindtap='close' src='../images/chengyijin_icon_close@2x.png'></image>
+    <view class='title_1'>什么是诚意金？</view>
+    <text>{{price}}元诚意咨询金，让生意长长久久。</text>
+    <text>支付诚意咨询金后，表示您对小日子所提倡的理想生活方式的赞同，支付后将有专人通过您留下的微信与您联系，与您1对1沟通理想生活事宜，向您提供更多店铺投资项目。</text>
+      <text>*若您所选项目成功，诚意咨询金可抵用项目投资款；</text>  
+  
+</view>
+
+<view class='success' style='display:{{display}}'>
+    <view class='dialog'>
+    <image bindtap='close_1' src='../images/chengyijin_icon_close@2x.png'></image>
+        <text>支付成功！</text>
+        <view>欢迎加入小日子美好生活商学院！</view>
+        <view>小日子APP将在3个工作日内与您取得联系，请保持手机畅通</view>
+        <view>如有其它问题，请添加客服微信号：lifehot01</view>
+    </view>
+</view>

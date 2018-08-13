@@ -1,0 +1,126 @@
+/* pages/user/user.wxss */
+page{
+  border: none;
+}
+.info{
+  background: #fff;
+  padding: 32rpx 45rpx;
+}
+.userinfo-avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 100%;
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: middle;
+  margin-right: 55rpx;
+}
+.userinfo-name{
+  color: #3C3C3C;
+  font-size: 32rpx;
+  font-weight: 600;
+  vertical-align: middle;
+  display: inline-block;
+  overflow: hidden;
+}
+.content{
+  padding: 42rpx 30rpx;
+}
+.title_1{
+  color: #000;
+  font-size: 30rpx;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.btn{
+  width: 300rpx;
+  height: 70rpx;
+  background: #F95C36;
+  border-radius: 3px;
+  border: none;
+  color: #FFF;
+  font-size: 30rpx;
+  outline: none;
+  display: block;
+  margin: 200px auto;
+}
+
+.empty{
+  text-align: center;
+  color: #7C7E7E;
+  padding: 200rpx 0;
+}
+.empty image{
+  width: 202rpx;
+}
+.empty view{
+  margin: 10px 0;
+}
+.empty navigator{
+  width: 198rpx;
+  height: 70rpx;
+  color: #FFF;
+  text-align: center;
+  line-height: 70rpx;
+  background: #F95C36;
+  border-radius: 3px;
+  font-size: 30rpx;
+  margin: auto;
+}
+
+.list{
+  background: #fff;
+  margin-bottom: 10px;
+  box-shadow: 0 0 20px 1px rgba(109, 109, 109, 0.30);
+}
+.order_info{
+  padding: 15px 10px;
+  position: relative;
+  padding-left: 280rpx;
+  display: block;
+}
+.order_info image{
+  width: 240rpx;
+  height: 150rpx;
+  position: absolute;
+  left: 10px;
+  top: 15px;
+}
+.title{
+  color: #3C3C3C;
+  font-size: 24rpx;
+  margin-bottom: 8px;
+  height: 34px;
+}
+.time{
+  color: #7C7E7E;
+  font-size: 20rpx;
+  margin-bottom: 5px;
+}
+.price,.status{
+  color: #7C7E7E;
+  font-size: 24rpx;
+}
+.status{
+  float: right;
+  position: relative;
+  top: 5px;
+}
+.status_0{
+  color: #F95C36;
+}
+.ewm{
+  height: 90rpx;
+  text-align: center;
+  color: #F95C36;
+  font-size: 30rpx;
+  background: #FFF3F0;
+  line-height: 90rpx;
+}
+.ewm image{
+  width: 38rpx;
+  height: 38rpx;
+  position: relative;
+  top: 4px;
+  left: -10px;
+}

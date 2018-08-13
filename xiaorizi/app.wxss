@@ -1,0 +1,75 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+view,text,scroll-view,navigator{
+  box-sizing: border-box;
+}
+page{
+  background: #f5f5f5;
+}
+.after,.before{
+  position: relative;
+}
+.after:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: auto;
+    top: auto;
+    height: 1px;
+    width: 100%;
+    background-color: #cacaca;
+    display: block;
+    z-index: 15;
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    transform: scaleY(0.33);
+}
+.before:before{
+    content: '';
+    position: absolute;
+    left: 0px;
+    bottom:auto0;
+    right: auto;
+    top: 0;
+    height: 1px;
+    width: 100%;
+    background-color: #cacaca;
+    display: block;
+    z-index: 15;
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    transform: scaleY(0.33);
+}
+
+.new_list{
+  padding: 15px 0;
+  width: 95%;
+  margin: auto;
+}
+.new_list .title{
+    font-size: 30rpx;
+    color: #000;
+    /* font-weight: 600; */
+    margin-bottom: 10px;
+}
+.new_list .name{
+  color: #666;
+  font-size: 28rpx;
+  padding-right: 50px;
+  position: relative;
+}
+.name text{
+  color: #999;
+  position: absolute;
+  right: 0;
+  top: 0;
+}

@@ -1,0 +1,50 @@
+<image style='width:100%'  mode="widthFix" src='../images/banner@2x (2).jpg'></image>
+
+<view class='wish'>
+    <image style='width:60px' mode="widthFix" src='../images/icon_music@3x.png'></image>
+    <text>一首《成都》唱火了一座城，</text>
+    <text>也唱活了成都玉林小酒馆。</text>
+    <text>在这里人们留下了关于青春的回忆，</text>
+    <text>而我要在这里留下你的名字</text>
+    <text>和我对你的祝福。</text>
+    <image style='width:60px' mode="widthFix" src='../images/icon_vioce@3x.png'></image>
+    <text>新年伊始，在你稍有遗憾的跨过2017，</text>
+    <text>在你无数次失望后依然打算埋头奋斗之时，</text>
+    <text>有些话我一定要对你说...</text>
+    <image style='width:60px' mode="widthFix" src='../images/icon_movie@3x.png'></image>
+    <text>我们可在成都玉林小酒馆门前，昆明西南联大旧址，</text>
+    <text>重庆贰厂天台三个地方为您录制祝福视频，</text>
+    <text>并将视频发给您。</text>
+    <text>把祝福印成文字贴在小酒馆对面的小日子APP</text>
+    <text>示范田墙上保留一个月。</text>
+
+    <view class='title'>许下愿望</view>
+
+    <view class='wish_content'>
+    <!-- <image  src='../images/banner@2x.jpg'></image> -->
+          <view class='head'>To <input id="head" bindinput="bindKeyInput" placeholder='小日子'></input></view>
+          <textarea id="content" bindinput="bindKeyInput" placeholder='请填写30字以内的祝福语'></textarea>
+          <view class='head footer'>From  <input id="footer" bindinput="bindKeyInput" placeholder='你的大名'></input></view>
+    </view>
+
+    <view class='link_way'>
+       <view class='label'>微信号</view><input confirm-type="next" id="wechat" bindinput="bindKeyInput"  placeholder='接受祝福视频'></input>
+    </view>
+    <view class='link_way'>
+       <view class='label'>手机号</view><input type='number' id="phone" bindinput="bindKeyInput" placeholder='方便我们联系你'></input>
+    </view>
+    
+    <view bindtap='post' class='post'><view>{{price}}元许下新年愿望</view></view>
+</view>
+
+<view class='success' style='display:{{display}}'>
+    <view class='dialog'>
+    <image bindtap='close_1' src='../images/chengyijin_icon_close@2x.png'></image>
+        <text>支付成功啦！</text>
+        <view>支付金额：{{price}}元</view>
+
+        <view>你的许愿将在3个工作日内通过微信传送许愿视频给你，请留意并保持手机畅通。</view>
+        <view>如有其它问题，请添加客服微信号：lifehot01</view>
+        <navigator open-type='switchTab' url='../index/index'>去小店逛逛</navigator>
+    </view>
+</view>

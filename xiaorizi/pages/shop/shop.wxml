@@ -1,0 +1,103 @@
+<scroll-view bindscroll="scroll" class="page" scroll-y="{{true}}" scroll-top="{{top}}" wx:if="{{title}}">
+<!-- <image  class="banner" mode="widthFix"  src="{{img}}"></image> -->
+<view class='after info'>
+  <text class='name'>{{title}}</text>
+  <text class='tag'>{{name}} <text class='time'>{{tag}}</text></text>
+  
+</view>
+<view class='address'>
+  <view wx:if="{{tel}}" bindtap='phone' data-tel="{{tel}}" >{{tel}}  <image class='phone' mode="widthFix"  src='../images/phone.png'></image></view>
+  <view bindtap='openMap' data-position="{{position}}">{{address}} <image data-position="{{position}}" mode="widthFix"  src='../images/map.png'></image></view>
+  <navigator wx:if="{{vip && !isQB}}" class='yh' url='../vip/vip' open-type='switchTab'>
+     <text>专享福利：</text> 
+    {{vip}}  <text class='pass'>开通PASS卡</text>
+  </navigator>
+</view>
+
+<view class='content'>
+  <text class='shop_name'>「 {{name}} 」</text>
+    <block wx:for="{{content}}">
+       <!-- <block wx:if="{{item.is_img}}" wx:for="{{item.content}}" wx:for-item="i">
+       <image mode="widthFix"  src="{{i}}"></image>
+       </block> -->
+       <block wx:if="{{!item.is_img}}" wx:for="{{item.content}}" wx:for-item="i">
+       <view>{{i}}</view>
+       </block> 
+    </block>
+</view>
+
+<view class='comments'>
+  <text class='title after' wx:if="{{!isQB}}">评论</text>
+  <view class='send_com' wx:if="{{!isQB}}">
+      <view class='avatar'>
+      <image wx:if="{{user.avatarUrl}}" mode="widthFix" src='{{user.avatarUrl}}'></image>
+      <image  wx:if="{{!user.avatarUrl}}" mode="widthFix"  src="../images/shouye.png"></image>
+      </view>
+      <view class='post'>
+        <input bindinput="inputChange" value='{{input}}' placeholder='坐下来聊两句吧' />  
+          <text bindtap='sendCom'>{{text}}</text>
+      </view>
+  </view>
+  <text class='title after'>全部评论（{{comment.commentnum}}）</text>
+  <view style='padding:0 10px;'>
+    <view class='com_list' wx:for="{{comment.current_objects}}">
+      <view class='photo'>
+      <image  wx:if="{{item.avatar}}" mode="widthFix"  src="{{item.avatar}}"></image>
+      <image  wx:if="{{!item.avatar}}" mode="widthFix"  src="../images/shouye.png"></image>
+      </view>
+      <view class='com_content'>
+        <text class='date'>{{item.date}}</text>
+        <view wx:if="{{item.name}}" class='com_name'>{{item.name}}</view>
+        <view wx:if="{{!item.name}}" class='com_name'>匿名</view>
+        <view class='com_info'>{{item.content}}</view>
+
+        <view class='com_list child' wx:for="{{item.son_commonts}}" wx:for-item="child">
+          <view class='photo'>
+          <image   wx:if="{{child.avatar}}" mode="widthFix"  src="{{child.avatar}}"></image>
+           <image  wx:if="{{!child.avatar}}" mode="widthFix"  src="../images/shouye.png"></image>
+          </view>
+          <view class='com_content'>
+          <!-- <text class='date'>{{child.date}}</text> -->
+            <view wx:if="{{child.name}}" class='com_name'>{{child.name}}</view>
+            <view wx:if="{{!child.name}}" class='com_name'>匿名</view>
+            <view class='com_info'>{{child.content}}</view>
+          </view>
+        </view>
+
+        <view class='cm' wx:if="{{!isQB}}">
+        <image bindtap='reply' data-id="{{item.id}}" mode="widthFix"  src='../images/comment_2.png'></image>
+        </view>
+        <view wx:if="{{root_id == item.id}}" class='post son'>
+          <input bindinput="_inputChange" value='{{_input}}' />  
+          <text bindtap='sendCom' data-index="{{index}}">回复</text>
+            <text class='cancle' bindtap='cancle'>取消</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view  class='place' wx:if="{{!isQB}}"></view>
+<!-- <navigator wx:if="{{vip}}" url='../vip/vip' class='footer'>查看小店优惠</navigator> -->
+<image wx:if="{{s_top != 0}}" mode="widthFix" bindtap='backTop' class='back_top' src='../images/back_top.png'></image>
+<!-- <button open-type="share">分享</button> -->
+
+<view class='footer' wx:if="{{!isQB}}">
+    <!-- <navigator wx:if="{{vip}}"  url='../vip/vip' open-type='switchTab'>
+     <image  mode="widthFix" src='../images/dianhui.png'></image>
+     <text>店惠</text>
+    </navigator> -->
+    <view>
+     <image  mode="widthFix" src='../images/fenxiang.png'></image>
+     <text>分享</text>
+     <button class='share' open-type="share"></button>
+    </view>
+    <view  bindtap='collect' data-type='0'  wx:if="{{!has_liked}}" >
+     <image data-type='0' mode="widthFix" src='../images/xihuan.png'></image>
+     <text data-type='0' >喜欢</text>
+    </view>
+    <view  bindtap='collect' data-type='1'  wx:if="{{has_liked}}" >
+        <image data-type='1'  wx:if="{{has_liked}}"  mode="widthFix" src='../images/yixihuan.png'></image>
+     <text data-type='1' >喜欢</text>
+    </view>
+</view>
+</scroll-view>

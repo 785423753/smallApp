@@ -1,0 +1,63 @@
+/* pages/refund/refund.wxss */
+.content{
+  background: #fff;
+  padding: 1px 15px;
+  margin-bottom: 50px;
+}
+.content>view{
+  border-bottom: 1px solid #E8E8E8;
+  color: #3C3C3C;
+  font-size: 28rpx;
+  padding: 15px 0;
+  position: relative;
+}
+.content>view:last-child{
+  border: none;
+}
+.title{
+  color: #000;
+  font-size: 32rpx;
+  font-weight: 600;
+  display: block;
+  margin-top: 15px;
+}
+.list text{
+  color: #3C3C3C;
+  font-size: 30rpx;
+  /* font-weight: 600; */
+  display: block;
+}
+
+.radio{
+  width: 60rpx;
+  height: 34rpx;
+  position: absolute;
+  right: 0;
+  top: 15px;
+}
+.radio image{
+  width: 34rpx;
+  height: 34rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.intro text{
+  font-weight: 500;
+  font-size: 28rpx;
+}
+.post{
+  width: 100%;
+  line-height: 50px;
+  color: #FFF;
+  font-size: 34rpx;
+  background: #F95C36;
+  text-align: center;
+  border: none;
+  outline: none;
+}
+.title text{
+  color: #F95C36;
+  font-size: 32rpx;
+  float: right;
+}
